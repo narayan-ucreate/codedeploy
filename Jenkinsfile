@@ -4,7 +4,6 @@ node {
          sh 'composer install'
 
               echo  "this is env variable ${env.BUILD_ID}"
-              
 
        }
        stage("phpunit") {

@@ -1,10 +1,10 @@
-pipeline {
-    agent { docker { image 'php' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'php --version'
-            }
-        }
+node {
+    stage("composer_install") {
+        // Run `composer update` as a shell script
+        sh 'composer install'
+    }
+    stage("phpunit") {
+        // Run PHPUnit
+        sh 'vendor/bin/phpunit'
     }
 }

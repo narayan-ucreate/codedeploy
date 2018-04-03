@@ -20,10 +20,10 @@ node {
         sh 'sudo php-xdebug'
         sh 'sudo php7.0-curl'
         sh 'sudo unzip'
-        sh 'sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"'
-        sh 'sudo php composer-setup.php'
-        sh 'sudo php -r "unlink('composer-setup.php')"'
-        sh 'sudo mv composer.phar /usr/local/bin/composer'
+        sh "php -r copy('https://getcomposer.org/installer', 'composer-setup.php')"
+        sh "php composer-setup.php"
+        sh "php -r unlink('composer-setup.php')"
+        sh "mv composer.phar /usr/local/bin/composer"
 
     }
     stage("composer_install") {

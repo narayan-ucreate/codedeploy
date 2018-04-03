@@ -20,7 +20,8 @@ node {
         sh 'sudo apt-get install -y php-xdebug'
         sh 'sudo apt-get install -y php7.0-curl'
         sh 'sudo apt-get install -y unzip'
-        sh 'php -r copy("https://getcomposer.org/installer", "composer-setup.php")'
+        sh 'wget -nc "http://getcomposer.org/composer.phar'
+        //sh 'php -r copy("https://getcomposer.org/installer", "composer-setup.php")'
         //sh "php composer-setup.php"
         //sh "php -r unlink('composer-setup.php')"
         //sh "mv composer.phar /usr/local/bin/composer"

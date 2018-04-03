@@ -5,7 +5,6 @@ node {
         sh 'sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php'
         sh 'sudo apt-get update'
         sh 'sudo apt-get install -y php7.0'
-        sh 'sudo php7.0-ldap'
         sh 'sudo php7.0-xml'
         sh 'php7.0-xmlrpc'
         sh 'sudo php7.0-zip'

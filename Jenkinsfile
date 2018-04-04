@@ -1,4 +1,6 @@
+properties([pipelineTriggers([githubPush()])])
 node {
+    git url: 'https://github.com/narayan-ucreate/codedeploy.git', branch: 'master'
     stage("install_dependency") {
         //sh 'sudo apt-get update'
         //sh 'sudo apt-get install -y  software-properties-common'

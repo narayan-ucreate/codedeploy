@@ -52,7 +52,7 @@ node {
          sh 'vendor/bin/phpunit'
       }
  stage('Build image') {
- checkout scm sh "docker build -t 127.0.0.1:8080/ubuntu-test ." }
+ checkout scm sh "docker build -t 127.0.0.1:8080/ubuntu-test ."
 
  //sh 'docker build -t ubuntu-test:latest'
       //  app = docker.build("docker build -t docker-whale .")

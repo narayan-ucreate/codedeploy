@@ -1,5 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 node {
+ def app
     git url: 'https://github.com/narayan-ucreate/codedeploy.git', branch: 'master'
     stage("install_dependency") {
         //sh 'sudo apt-get update'
@@ -51,7 +52,7 @@ node {
          sh 'vendor/bin/phpunit'
       }
  stage('Build image') {
-        app = docker.build("/var/www")
+        app = docker.build("getintodevops/hellonode")
     }
 
        stage("deploying_to_aws") {

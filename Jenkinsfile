@@ -49,4 +49,10 @@ node {
        stage("phpunit") {
          sh 'vendor/bin/phpunit'
       }
+
+       stage("deploying_to_aws") {
+         step([$class: 'AWSCodeDeployPublisher', applicationName: 'jenkinCodedeploy', awsAccessKey: 'AKIAIWJIHJO7ZTPC3I2A', awsSecretKey: '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', deploymentGroupAppspec: false, deploymentGroupName: 'jenkinCodedeploy', excludes: '', iamRoleArn: '', includes: '**', proxyHost: '', proxyPort: 0, region: 'us-east-2', s3bucket: '', s3prefix: '', subdirectory: '', versionFileName: '', waitForCompletion: false])
+
+      }
+
 }

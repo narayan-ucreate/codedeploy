@@ -43,7 +43,7 @@ node {
     }
     stage("composer_install") {
          // Run `composer update` as a shell script
-         sh 'sudo composer install'
+         sh 'sudo composer install --ignore-platform-reqs'
 
        }
        stage("phpunit") {

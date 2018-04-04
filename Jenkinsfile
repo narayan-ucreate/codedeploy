@@ -43,7 +43,8 @@ node {
     }
     stage("composer_install") {
          // Run `composer update` as a shell script
-         sh 'sudo composer install --ignore-platform-reqs'
+         sh 'sudo composer install'
+         // --ignore-platform-reqs
 
        }
        stage("phpunit") {
@@ -51,7 +52,7 @@ node {
       }
 
        stage("deploying_to_aws") {
-         step([$class: 'AWSCodeDeployPublisher', applicationName: 'jenkinCodedeploy', awsAccessKey: 'AKIAI7ZMYBVKTKP6HD2A', awsSecretKey: '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', deploymentGroupAppspec: false, deploymentGroupName: 'jenkinCodedeploy', excludes: '', iamRoleArn: '', includes: '**', proxyHost: '', proxyPort: 0, region: 'us-east-2', s3bucket: '', s3prefix: '', subdirectory: '', versionFileName: '', waitForCompletion: false])
+       //  step([$class: 'AWSCodeDeployPublisher', applicationName: 'jenkinCodedeploy', awsAccessKey: 'AKIAI7ZMYBVKTKP6HD2A', awsSecretKey: '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', deploymentGroupAppspec: false, deploymentGroupName: 'jenkinCodedeploy', excludes: '', iamRoleArn: '', includes: '**', proxyHost: '', proxyPort: 0, region: 'us-east-2', s3bucket: '', s3prefix: '', subdirectory: '', versionFileName: '', waitForCompletion: false])
 
       }
 

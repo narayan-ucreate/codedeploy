@@ -50,6 +50,9 @@ node {
        stage("phpunit") {
          sh 'vendor/bin/phpunit'
       }
+ stage('Build image') {
+        app = docker.build("/var/www")
+    }
 
        stage("deploying_to_aws") {
        //  step([$class: 'AWSCodeDeployPublisher', applicationName: 'jenkinCodedeploy', awsAccessKey: 'AKIAI7ZMYBVKTKP6HD2A', awsSecretKey: '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', deploymentGroupAppspec: false, deploymentGroupName: 'jenkinCodedeploy', excludes: '', iamRoleArn: '', includes: '**', proxyHost: '', proxyPort: 0, region: 'us-east-2', s3bucket: '', s3prefix: '', subdirectory: '', versionFileName: '', waitForCompletion: false])
